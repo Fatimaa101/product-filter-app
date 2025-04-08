@@ -1,3 +1,40 @@
+# Product Filter Mini Project
+
+## Overview
+
+This project is a **Product Filter application** built using **HTML**, **CSS**, and **jQuery**. It allows users to filter a list of products by categories like **Shoes**, **Sandals**, and **Heels**. The filtering is done dynamically, and the page is **responsive**, ensuring a seamless user experience across different devices.
+
+## Features
+
+- **Category Filter**: Filter products by categories such as **Shoes**, **Sandals**, and **Heels**.
+- **Responsive Design**: The layout adapts to different screen sizes (desktop, tablet, and mobile).
+- **Fade-in and Fade-out Animations**: Smooth animations are used when switching between product categories.
+- **Interactive Buttons**: Buttons change the active state when clicked, highlighting the selected category.
+
+## Technologies Used
+
+- **HTML5**: Markup for structuring the page.
+- **CSS3**: Styling and layout for a clean and responsive design.
+- **jQuery**: Used to handle the filtering functionality and smooth animations.
+- **Responsive Design**: The project adapts to various screen sizes (mobile-first approach).
+
+## Live URL
+
+[View Demo](#) (Insert a link to your hosted demo here)
+
+## How It Works
+
+### 1. Page Load
+
+When the page loads, all the product images are displayed. The **Show All** button is selected by default, showing all products.
+
+### 2. Filtering Products
+
+The user can click on one of the category buttons (**Shoes**, **Sandals**, or **Heels**) to filter products based on their selection. The categories are displayed in a grid, and only the items corresponding to the selected category will be visible.
+
+### 3. Animations
+
+The product images fade in and fade out smoothly when switching between different categories.
 
 ## File Description
 
@@ -40,7 +77,6 @@ The layout adjusts to a **single column** for easy viewing.
 - For screens with a width of **768px** or less, the layout changes to display **2 columns**.
 - For screens with a width of **480px** or less, the layout switches to a **single column** to optimize for smaller devices.
 
----
 
-Feel free to replace the `View Demo` link and tweak any section based on your project specifics. This is a structured README that provides both **technical details** and **user-focused explanations**.
+
 
