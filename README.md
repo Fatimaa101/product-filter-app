@@ -20,8 +20,8 @@ This project is a **Product Filter application** built using **HTML**, **CSS**, 
 
 ## Live URL
 
-[View Demo](#) (Insert a link to your hosted demo here)
-
+https://fatimaa101.github.io/product-filter-app/
+ 
 ## How It Works
 
 ### 1. Page Load
