@@ -1,8 +1,11 @@
-Product Filter Mini Project
+<h1>Product Filter Mini Project</h1>
+
 Overview
+
 This project is a Product Filter application built using HTML, CSS, and jQuery. It allows users to filter a list of products by categories like Shoes, Sandals, and Heels. The filtering is done dynamically, and the page is responsive to ensure a seamless user experience across different devices.
 
 Features
+
 Category Filter: Filter products by categories such as Shoes, Sandals, and Heels.
 
 Responsive Design: The layout adapts to different screen sizes (desktop, tablet, and mobile).
