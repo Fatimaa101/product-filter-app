@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-filter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        .main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 40px;
+            word-break: break-all;
+        }
+
+        .btn {
+            padding: 12px 16px;
+            border: none;
+            outline: none;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ddd;
+        }
+
+        .btn.active {
+            background-color: #3b39399a;
+            color: white;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .column {
+            flex: 1 0 30%;
+            padding: 8px;
+            min-width: 250px;
+            flex-direction: column;
+            justify-content: space-between;
+            display: none;
+        }
+
+        .content {
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            /* Allow content to grow */
+            justify-content: space-between;
+            /* Space out content */
+        }
+
+        .image-container {
+            flex-grow: 1;
+            /* Allow the image container to grow */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            /* Make the image fill the container */
+            object-fit: cover;
+            /* Crop the image to fill the container */
+            /* The object-fit: cover; property ensures that images fill the container while maintaining their aspect ratio. Images that are too tall or too wide will be cropped rather than stretched. */
+        }
+
+        /* hiding element for jquery */
+        h1,
+        h3,
+        .btn,
+        .column {
+            display: none;
+        }
+
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .column {
+                flex: 1 0 45%;
+                /* Change to 2 columns on medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .column {
+                flex: 1 0 100%;
+                /* Change to 1 column on small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>FOOTWEARS.COM</h1>
+        <hr>
+        <h3>FILTER PRODUCTS</h3>
+
+        <div class="btncontainer">
+            <button class="btn active" onclick="filterSelection('all', this)">Show all</button>
+            <button class="btn" onclick="filterSelection('shoes', this)">Shoes</button>
+            <button class="btn" onclick="filterSelection('sandals', this)">Sandals</button>
+            <button class="btn" onclick="filterSelection('heels', this)">Heels</button>
+        </div>
+
+        <div class="row">
+            <div class="column shoes">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/shoes1.avif" alt="shoes">
+                    </div>
+                    <h4>Shoe 1</h4>
+                </div>
+            </div>
+            <div class="column shoes">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/shoes4.avif" alt="shoes">
+                    </div>
+                    <h4>Shoe 2</h4>
+                </div>
+            </div>
+            <div class="column shoes">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/shoes5.avif" alt="shoes">
+                    </div>
+                    <h4>Shoe 3</h4>
+                </div>
+            </div>
+            <div class="column shoes">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/shoes2.avif" alt="shoes">
+                    </div>
+                    <h4>Shoe 4</h4>
+                </div>
+            </div>
+
+            <div class="column sandals">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/sandal2.jpg" alt="sandal">
+                    </div>
+                    <h4>Sandal 1</h4>
+                </div>
+            </div>
+            <div class="column sandals">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/sandal3.jpg" alt="sandal">
+                    </div>
+                    <h4>Sandal 2</h4>
+                </div>
+            </div>
+            <div class="column sandals">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/sandal1.jpg" alt="sandal">
+                    </div>
+                    <h4>Sandal 3</h4>
+                </div>
+            </div>
+            <div class="column sandals">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/sandal4.jpg" alt="sandal">
+                    </div>
+                    <h4>Sandal 4</h4>
+                </div>
+            </div>
+
+            <div class="column heels">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/heel3.avif" alt="heels">
+                    </div>
+                    <h4>Heel 1</h4>
+                </div>
+            </div>
+            <div class="column heels">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/heel1.avif" alt="heels">
+                    </div>
+                    <h4>Heel 2</h4>
+                </div>
+            </div>
+            <div class="column heels">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/heel4.avif" alt="heels">
+                    </div>
+                    <h4>Heel 3</h4>
+                </div>
+            </div>
+            <div class="column heels">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/heel5.avif" alt="heels">
+                    </div>
+                    <h4>Heel 4</h4>
+                </div>
+            </div>
+            <div class="column heels">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/heel7.avif" alt="heels">
+                    </div>
+                    <h4>Heel 5</h4>
+                </div>
+            </div>
+            <div class="column heels">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/heel6.avif" alt="heels">
+                    </div>
+                    <h4>Heel 6</h4>
+                </div>
+            </div>
+            <div class="column heels">
+                <div class="content">
+                    <div class="image-container">
+                        <img src="images/heel2.avif" alt="heels">
+                    </div>
+                    <h4>Heel 7</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        $(document).ready(function () {
+    // Fade in all columns when the page loads
+    $('.column').fadeIn(1000); // Adjust duration as needed
+    $('h1,h3,.btn').fadeIn(1000);
+
+    window.filterSelection = function (category, btn) {
+        // Hide all columns first
+        $('.column').fadeOut(300); // Fade out all columns first
+
+        // After fading out is complete, show the selected category
+        setTimeout(function () {
+            if (category === 'all') {
+                $('.column').fadeIn(300); // Show all
+            } else {
+                $('.column.' + category).fadeIn(300); // Show selected category
+            }
+        }, 300); // Wait for the fadeOut duration (300ms) before showing the filtered elements
+
+        // Update active button state
+        $('.btn').removeClass('active');
+        $(btn).addClass('active'); // Add active class to the clicked button
+    };
+
+});
+
+
+    </script>
+</body>
+
+</html>
